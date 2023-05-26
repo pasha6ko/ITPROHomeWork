@@ -11,10 +11,10 @@ namespace ITPROHomeWork
     {
         static public void RunAll()
         {
-            //First();
-            //Second();
+            First();
+            Second();
             Third();
-            //Forth();
+            Forth();
         }
         static public void First()
         {
