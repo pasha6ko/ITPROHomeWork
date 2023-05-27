@@ -89,7 +89,7 @@ namespace ITPROHomeWork
             string age = Console.ReadLine();
             char[] ageSym = age.ToCharArray();
             string postfix = "";
-            if (ageSym.Last()=='1')
+            if (ageSym.Last()=='1' && age !="11")
             {
                 postfix = "год";
             }
