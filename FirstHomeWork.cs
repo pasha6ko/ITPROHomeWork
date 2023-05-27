@@ -87,6 +87,11 @@ namespace ITPROHomeWork
         {
             Console.Write("Введите ваш возраст: ");
             string age = Console.ReadLine();
+            if(Convert.ToInt32(age)<1|| Convert.ToInt32(age) > 99)
+            {
+                Console.WriteLine("Недопустимое значение");
+                return;
+            }
             char[] ageSym = age.ToCharArray();
             string postfix = "";
             if (ageSym.Last()=='1' && age !="11")
