@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ITPROHomeWork
+﻿namespace ITPROHomeWork
 {
     internal class FirstHomeWork
     {
@@ -26,7 +19,7 @@ namespace ITPROHomeWork
                 "Темература в:                          \n" +
                 $"Цельсий = {celsius.ToString("0.0")}   \n" +
                 $"Кельвин = {kelvin.ToString("0.0")}    \n" +
-                $"Кельвин = {fahrenheit.ToString("0.0")}\n");
+                $"Фаренгейт = {fahrenheit.ToString("0.0")}\n");
         }
         static public void Second()
         {
@@ -41,13 +34,13 @@ namespace ITPROHomeWork
             char sym = Convert.ToChar(Console.ReadLine());
 
             Console.WriteLine("Введите первый параметр");
-            double a  = Convert.ToDouble(Console.ReadLine());
+            double a = Convert.ToDouble(Console.ReadLine());
 
             Console.WriteLine("Введите второй параметр");
             double b = Convert.ToDouble(Console.ReadLine());
 
-            double answer; 
-            switch(sym)
+            double answer;
+            switch (sym)
             {
                 case '+':
                     answer = a + b;
@@ -78,7 +71,7 @@ namespace ITPROHomeWork
             int b = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"Сколько будет если {a} умножить на {b} ?");
             int answer = Convert.ToInt32(Console.ReadLine());
-            if(answer==a*b)
+            if (answer == a * b)
             {
                 Console.WriteLine("Вы дали правельный ответ");
             }
@@ -92,12 +85,12 @@ namespace ITPROHomeWork
             Console.Write("Введите ваш возраст: ");
             int age = Convert.ToInt32(Console.ReadLine());
             string postfix;
-            
-            if (age/10 != 1 && age % 10==1)
+
+            if (age%100 / 10 != 1 && age % 10 == 1)
             {
                 postfix = "год";
             }
-            else if(age % 10 >1 && age % 10 <5 && age / 10 != 1)
+            else if (age % 10 > 1 && age % 10 < 5 && age / 10 != 1)
             {
                 postfix = "года";
             }
@@ -109,5 +102,5 @@ namespace ITPROHomeWork
 
         }
     }
-    
+
 }

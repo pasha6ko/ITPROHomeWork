@@ -1,3 +1,3 @@
 ﻿using ITPROHomeWork;
+SecondHomeWork.RunAll();
 
-FirstHomeWork.RunAll();
