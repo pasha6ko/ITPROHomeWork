@@ -135,7 +135,7 @@ namespace ITPROHomeWork
             }
             foreach (int id in grade.Keys)
             {
-                Console.WriteLine($"Ученик {id} :");
+                Console.WriteLine($"Ученик {id} : ");
                 foreach (string subject in grade[id].Keys)
                 {
                     Console.WriteLine($"     {subject}: {grade[id][subject]}");
@@ -145,7 +145,7 @@ namespace ITPROHomeWork
             {
                 while (true)
                 {
-                    Console.Write("Продолжить ? y/n");
+                    Console.Write("Продолжить ? y/n ");
                     string userAnswer = Console.ReadLine();
                     if(userAnswer == "y")
                     {
