@@ -1,3 +1,3 @@
 ﻿using ITPROHomeWork;
-DopFirst.RunAll();
-
+ThirdHomeWork.RunHomeWork();
+ThirdHomeWork.RunAll();
