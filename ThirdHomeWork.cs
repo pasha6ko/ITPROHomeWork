@@ -1,4 +1,6 @@
-﻿namespace ITPROHomeWork
+﻿using System.Globalization;
+
+namespace ITPROHomeWork
 {
     internal class ThirdHomeWork
     {
@@ -129,6 +131,7 @@
                     student[subject] = mark;
                 }
                 grade.Add(i, student);
+
             }
             foreach (int id in grade.Keys)
             {
@@ -138,8 +141,61 @@
                     Console.WriteLine($"     {subject}: {grade[id][subject]}");
                 }
             }
-            Console.ReadKey();
-            Console.Clear();
+            while (true)
+            {
+                while (true)
+                {
+                    Console.Write("Продолжить ? y/n");
+                    string userAnswer = Console.ReadLine();
+                    if(userAnswer == "y")
+                    {
+                        break;
+                    }
+                    else if(userAnswer == "n")
+                    {
+                        return;
+                    }
+                }
+                Console.WriteLine(grade.ContainsKey(3));
+                int inputStudent;
+                do Console.WriteLine("Введите номер ученика");
+                while (!(int.TryParse(Console.ReadLine(), out inputStudent) && grade.ContainsKey(inputStudent)));
+                string inputSubject;
+                while (true)
+                {
+                    Console.Write("Выберите предмет");
+                    inputSubject = Console.ReadLine();
+                    if (grade[inputStudent].ContainsKey(inputSubject))
+                    {
+                        break;
+                    }
+                }
+                int mark;
+                do Console.Write($"Введите оценку за предмет \"{inputSubject}\" : ");
+                while (!(int.TryParse(Console.ReadLine(), out mark) && mark > 0 && mark <= 5));
+                grade[inputStudent][inputSubject] = mark;
+                ShowTable(grade);
+                foreach (int id in grade.Keys)
+                {
+                    Console.WriteLine($"Ученик {id} :");
+                    foreach (string subject in grade[id].Keys)
+                    {
+                        Console.WriteLine($"     {subject}: {grade[id][subject]}");
+                    }
+                }
+                foreach (int id in grade.Keys)
+                {
+                    Console.WriteLine($"Ученик {id} :");
+                    foreach (string subject in grade[id].Keys)
+                    {
+                        Console.WriteLine($"     {subject}: {grade[id][subject]}");
+                    }
+                }
+            }
+        }
+        static void ShowTable(Dictionary<int, Dictionary<string, int>> grade)
+        {
+            
         }
         static public void HomeSecond()
         {
