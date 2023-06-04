@@ -156,7 +156,6 @@ namespace ITPROHomeWork
                         return;
                     }
                 }
-                Console.WriteLine(grade.ContainsKey(3));
                 int inputStudent;
                 do Console.WriteLine("Введите номер ученика");
                 while (!(int.TryParse(Console.ReadLine(), out inputStudent) && grade.ContainsKey(inputStudent)));
