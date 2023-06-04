@@ -126,27 +126,20 @@ namespace ITPROHomeWork
                 {
                     int mark;
                     do Console.Write($"Введите оценку за предмет \"{subject}\" : ");
-                    while (!(int.TryParse(Console.ReadLine(), out mark) && mark > 0 && mark <= 5));
+                    while (!(int.TryParse(Console.ReadLine().Trim(), out mark) && mark > 0 && mark <= 5));
 
                     student[subject] = mark;
                 }
                 grade.Add(i, student);
 
             }
-            foreach (int id in grade.Keys)
-            {
-                Console.WriteLine($"Ученик {id} : ");
-                foreach (string subject in grade[id].Keys)
-                {
-                    Console.WriteLine($"     {subject}: {grade[id][subject]}");
-                }
-            }
+            ShowTable(grade);
             while (true)
             {
                 while (true)
                 {
                     Console.Write("Продолжить ? y/n ");
-                    string userAnswer = Console.ReadLine();
+                    string userAnswer = Console.ReadLine().Trim();
                     if(userAnswer == "y")
                     {
                         break;
@@ -157,13 +150,13 @@ namespace ITPROHomeWork
                     }
                 }
                 int inputStudent;
-                do Console.WriteLine("Введите номер ученика");
-                while (!(int.TryParse(Console.ReadLine(), out inputStudent) && grade.ContainsKey(inputStudent)));
+                do Console.WriteLine("Введите номер ученика: ");
+                while (!(int.TryParse(Console.ReadLine().Trim(), out inputStudent) && grade.ContainsKey(inputStudent)));
                 string inputSubject;
                 while (true)
                 {
-                    Console.Write("Выберите предмет");
-                    inputSubject = Console.ReadLine();
+                    Console.Write("Впишите название предмета: ");
+                    inputSubject = Console.ReadLine().Trim();
                     if (grade[inputStudent].ContainsKey(inputSubject))
                     {
                         break;
@@ -171,30 +164,24 @@ namespace ITPROHomeWork
                 }
                 int mark;
                 do Console.Write($"Введите оценку за предмет \"{inputSubject}\" : ");
-                while (!(int.TryParse(Console.ReadLine(), out mark) && mark > 0 && mark <= 5));
+                while (!(int.TryParse(Console.ReadLine().Trim(), out mark) && mark > 0 && mark <= 5));
                 grade[inputStudent][inputSubject] = mark;
                 ShowTable(grade);
-                foreach (int id in grade.Keys)
-                {
-                    Console.WriteLine($"Ученик {id} :");
-                    foreach (string subject in grade[id].Keys)
-                    {
-                        Console.WriteLine($"     {subject}: {grade[id][subject]}");
-                    }
-                }
-                foreach (int id in grade.Keys)
-                {
-                    Console.WriteLine($"Ученик {id} :");
-                    foreach (string subject in grade[id].Keys)
-                    {
-                        Console.WriteLine($"     {subject}: {grade[id][subject]}");
-                    }
-                }
             }
         }
         static void ShowTable(Dictionary<int, Dictionary<string, int>> grade)
         {
+            Console.WriteLine("Номер ученика|Информатика|Разработка игр|Основы алгоритмизации|");
             
+            foreach (int id in grade.Keys)
+            {
+                Console.Write($"| {id} |");
+                foreach (string subject in grade[1].Keys)
+                {
+                    Console.Write($"| {grade[id][subject]} |");
+                }
+                Console.WriteLine();
+            }
         }
         static public void HomeSecond()
         {

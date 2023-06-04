@@ -5,7 +5,7 @@
         static int[,] t = new int[3, 4]{
                         {-8,-14,-19,-18},
                         {25,28,26,20},
-                        {11,-18,20,25}
+                        {11,18,20,25}
                         };
         static public void RunAll()
         {
@@ -46,12 +46,12 @@
         static public void Forth()
         {
             int rows = t.GetUpperBound(1) + 1;
-            int[] stationData = new int[4];
+            double stationData = 0;
             for (int i = 0; i < rows; i++)
             {
-                stationData[i] = t[2, i];
+                stationData += t[2, i];
             }
-            Console.WriteLine($"4-е Задание: {stationData.Average()}");
+            Console.WriteLine($"4-е Задание: {stationData/4}");
         }
         static public void Fifth()
         {
