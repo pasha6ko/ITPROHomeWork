@@ -8,3 +8,5 @@ PassengerAirPlane passengerAirPlane = new PassengerAirPlane("Boeing 767", 175540
 passengerAirPlane.ShowInfo();
 CargoAirPlane cargoAirPlane = new CargoAirPlane("Ан 225 «Мрия»",250000,900, "Авиалинии Антонова", 300000,60000,7.6f,88.5f,250);
 cargoAirPlane.ShowInfo();
+Train train = new Train("ЭТ2М", 100000, 120, "РЖД", 0, 13);
+train.ShowInfo();

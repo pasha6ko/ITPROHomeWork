@@ -203,4 +203,27 @@
             Console.WriteLine($"Грузоподъёмность: {LoadCopacity}т");
         }
     }
+    public class Train : Vehicle
+    {
+        /// <param name="name">Название транспорта</param>
+        /// <param name="weight">Вес</param>
+        /// <param name="speedLimit">Лимит скорости</param>
+        /// <param name="fabricator">Производитель</param>
+        /// <param name="fuelTankCapacity">Объём бака</param>
+        /// <param name="railwayCarriageLimit">Максимальное количество вагонов</param>
+        public Train(string name, int weight, int speedLimit, string fabricator, int fuelTankCapacity, int railwayCarriageLimit) : base(name, weight, speedLimit, fabricator, fuelTankCapacity)
+        {
+            RailwayCarriageLimit = railwayCarriageLimit;
+        }
+
+        /// <summary>Максимальное количество вагонов</summary>
+        public int RailwayCarriageLimit { get; private set; }
+
+        public override void ShowInfo()
+        {
+            base.ShowInfo();
+            Console.WriteLine($"Максимальное количество вагонов: {RailwayCarriageLimit}");
+        }
+
+    }
 }
