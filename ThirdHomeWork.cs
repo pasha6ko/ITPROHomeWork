@@ -171,14 +171,13 @@ namespace ITPROHomeWork
         }
         static void ShowTable(Dictionary<int, Dictionary<string, int>> grade)
         {
-            Console.WriteLine("Номер ученика|Информатика|Разработка игр|Основы алгоритмизации|");
-            
+            Console.WriteLine("| №У | ИН | РИ | ОА |");
             foreach (int id in grade.Keys)
             {
                 Console.Write($"| {id} |");
                 foreach (string subject in grade[1].Keys)
                 {
-                    Console.Write($"| {grade[id][subject]} |");
+                    Console.Write($"| {grade[id][subject],-1} |");
                 }
                 Console.WriteLine();
             }
